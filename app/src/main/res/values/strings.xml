@@ -11,4 +11,5 @@
     <string name="back_text"><![CDATA[<]]></string>
     <string name="mark_complete_text">Done</string>
     <string name="add_todo_item_text">Add ToDo Item</string>
+    <string name="clear_button_text">Clear</string>
 </resources>

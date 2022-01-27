@@ -1,5 +1,6 @@
 package com.example.mysecondpersonalapplication.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -27,12 +28,13 @@ class ToDoAdapter(
     class ToDoViewHolder(private val binding: ItemTodoBinding):
         RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(toDo: ToDo) {
 
             with(binding) {
                 val originalText = toDo.todoItem
                 val originalBtnText = removeBtn.text.toString()
-                toDoTv.text = toDo.todoItem
+                toDoTv.text = "${toDo.id + 1} ${toDo.todoItem}"
                 removeBtn.setOnClickListener{
 
                     if(toDoTv.text.toString() == "Task Complete"){

@@ -24,9 +24,9 @@ class TodoViewModel: ViewModel() {
         incrementId()
     }
 
-    fun removeToDo(index: Int){
-        toDoList.removeAt(index)
-
+    fun removeToDos(){
+        toDoList.clear()
+        idNum = 0
         _toDos.value = toDoList
     }
 

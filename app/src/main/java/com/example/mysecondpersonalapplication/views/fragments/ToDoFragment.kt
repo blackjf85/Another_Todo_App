@@ -42,10 +42,15 @@ class ToDoFragment: Fragment() {
             }
 
             addBtn.setOnClickListener {
+                val toDoItem = itemEt.text.toString()
                 val id = viewModel.idNum
-                val toDo = ToDo(itemEt.text.toString(), id)
+                val toDo = ToDo(toDoItem, id)
                 viewModel.addTodo(toDo)
                 itemEt.text?.clear()
+            }
+
+            clearBtn.setOnClickListener {
+                viewModel.removeToDos()
             }
 
             backBtn.setOnClickListener {
