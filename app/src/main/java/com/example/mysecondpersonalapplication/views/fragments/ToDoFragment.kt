@@ -47,14 +47,23 @@ class ToDoFragment: Fragment() {
             countTv.text = "Task Count: ${viewModel.idNum}"
 
             addBtn.setOnClickListener {
-                viewModel.setTodoItem(itemEt.text.toString())
-                val toDoItem = viewModel.todo.value.toString()
-                val id = viewModel.idNum
-                val toDo = ToDo(toDoItem, id)
-                viewModel.addTodo(toDo)
-                itemEt.text?.clear()
-                doneTv.text = "Finished?"
-                countTv.text = "Task Count: ${viewModel.idNum}"
+
+                if(itemEt.text.toString() != ""){
+                    viewModel.setTodoItem(itemEt.text.toString())
+                    val toDoItem = viewModel.todo.value.toString()
+                    val id = viewModel.idNum
+                    val toDo = ToDo(toDoItem, id)
+                    viewModel.addTodo(toDo)
+                    itemEt.text?.clear()
+                    doneTv.text = "Finished?"
+                    countTv.text = "Task Count: ${viewModel.idNum}"
+
+                    if(itemIL.hint.toString() == "Task cannot be empty"){
+                        itemIL.hint = "Add ToDo Item"
+                    }
+                }else{
+                    itemIL.hint = "Task cannot be empty"
+                }
             }
 
             clearBtn.setOnClickListener {

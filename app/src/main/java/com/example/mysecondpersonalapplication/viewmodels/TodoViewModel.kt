@@ -14,7 +14,7 @@ class TodoViewModel: ViewModel() {
 
     private var _toDos: MutableLiveData<List<ToDo>> = MutableLiveData()
     val toDos: LiveData<List<ToDo>> get() = _toDos
-    val toDoList: MutableList<ToDo> = mutableListOf()
+    private val toDoList: MutableList<ToDo> = mutableListOf()
 
     fun addTodo(toDo: ToDo) {
         toDoList.add(toDo)
