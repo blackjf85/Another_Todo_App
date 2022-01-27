@@ -42,7 +42,8 @@ class ToDoFragment: Fragment() {
             }
 
             addBtn.setOnClickListener {
-                val toDoItem = itemEt.text.toString()
+                viewModel.setTodoItem(itemEt.text.toString())
+                val toDoItem = viewModel.todo.value.toString()
                 val id = viewModel.idNum
                 val toDo = ToDo(toDoItem, id)
                 viewModel.addTodo(toDo)

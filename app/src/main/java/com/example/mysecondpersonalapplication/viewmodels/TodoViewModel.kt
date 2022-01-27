@@ -7,8 +7,6 @@ import com.example.mysecondpersonalapplication.data.ToDo
 
 class TodoViewModel: ViewModel() {
 
-    private var _id: MutableLiveData<Int> = MutableLiveData()
-    val id: LiveData<Int> get() = _id
     var idNum = 0
 
     private var _toDo: MutableLiveData<String> = MutableLiveData()
@@ -24,6 +22,10 @@ class TodoViewModel: ViewModel() {
         incrementId()
     }
 
+    fun setTodoItem(todo: String){
+        _toDo.value = todo
+    }
+
     fun removeToDos(){
         toDoList.clear()
         idNum = 0
@@ -32,7 +34,6 @@ class TodoViewModel: ViewModel() {
 
     private fun incrementId(){
         idNum++
-        _id.value = idNum
     }
 
 }
