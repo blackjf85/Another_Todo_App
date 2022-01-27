@@ -6,7 +6,7 @@
     <string name="continue_text">Continue</string>
     <string name="welcome_text">Welcome to Another ToDo App!</string>
     <string name="add_text">+</string>
-    <string name="task_text">Task</string>
+    <string name="task_text">Task List</string>
     <string name="finished_tv_text">Finished?</string>
     <string name="back_text"><![CDATA[<]]></string>
     <string name="mark_complete_text">Done</string>

@@ -1,5 +1,6 @@
 package com.example.mysecondpersonalapplication.views.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,6 +29,7 @@ class ToDoFragment: Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[TodoViewModel::class.java]
@@ -41,6 +43,9 @@ class ToDoFragment: Fragment() {
                 }
             }
 
+            doneTv.text = ""
+            countTv.text = "Task Count: ${viewModel.idNum}"
+
             addBtn.setOnClickListener {
                 viewModel.setTodoItem(itemEt.text.toString())
                 val toDoItem = viewModel.todo.value.toString()
@@ -48,10 +53,14 @@ class ToDoFragment: Fragment() {
                 val toDo = ToDo(toDoItem, id)
                 viewModel.addTodo(toDo)
                 itemEt.text?.clear()
+                doneTv.text = "Finished?"
+                countTv.text = "Task Count: ${viewModel.idNum}"
             }
 
             clearBtn.setOnClickListener {
                 viewModel.removeToDos()
+                doneTv.text = ""
+                countTv.text = "Task Count: ${viewModel.idNum}"
             }
 
             backBtn.setOnClickListener {

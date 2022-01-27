@@ -16,8 +16,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/itemRv"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/doneTv"
+        app:layout_constraintEnd_toStartOf="@id/countTv"
         android:text="@string/task_text"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/countTv"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/itemRv"
+        app:layout_constraintStart_toEndOf="@id/itemTv"
+        app:layout_constraintEnd_toStartOf="@id/doneTv"
+        tools:text="Task Count: 1"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/doneTv"
@@ -30,7 +42,7 @@
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/itemRv"
-        app:layout_constraintStart_toEndOf="@id/itemTv"
+        app:layout_constraintStart_toEndOf="@id/countTv"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/finished_tv_text"/>
 
