@@ -33,16 +33,13 @@ class ToDoAdapter(
 
             with(binding) {
                 val originalText = "${toDo.id + 1} ${toDo.todoItem}"
-                val originalBtnText = removeBtn.text.toString()
                 toDoTv.text = "${toDo.id + 1} ${toDo.todoItem}"
-                removeBtn.setOnClickListener{
+                removeCb.setOnClickListener{
 
                     if(toDoTv.text.toString() == "${toDo.id + 1} Task Complete"){
                         toDoTv.text = originalText
-                        removeBtn.text = originalBtnText
                     }else{
                         toDoTv.text = "${toDo.id + 1} Task Complete"
-                        removeBtn.text = "Undo"
                     }
                 }
             }

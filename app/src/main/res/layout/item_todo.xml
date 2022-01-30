@@ -16,17 +16,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/removeBtn"
+        app:layout_constraintEnd_toStartOf="@id/removeCb"
         tools:text="Wash the Dishes"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/removeBtn"
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/removeBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@id/toDoTv"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:text="@string/mark_complete_text"/>-->
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/removeCb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/toDoTv"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/mark_complete_text"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
